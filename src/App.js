@@ -12,7 +12,7 @@ import HomePage from './pages/homepage/homepage.page';
 import ShopPage from './pages/shop/shop.page';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.page';
 import CheckoutPage from './pages/checkout/checkout.page';
-import './App.css';
+import GlobalStyle from './global.styles';
 
 const App = ({ setCurrentUser, currentUser }) => {
   useEffect(() => {
@@ -37,6 +37,7 @@ const App = ({ setCurrentUser, currentUser }) => {
 
   return (
     <div>
+      <GlobalStyle />
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />

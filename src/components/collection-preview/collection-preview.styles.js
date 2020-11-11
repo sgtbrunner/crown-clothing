@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const CollectionPreviewContainer = styled.div`
   display: flex;
@@ -10,10 +11,9 @@ export const CollectionPreviewContainer = styled.div`
   }
 `;
 
-export const TitleContainer = styled.h1`
+export const TitleLink = styled(Link)`
   font-size: 28px;
   margin-bottom: 25px;
-  cursor: pointer;
 
   &:hover {
     color: grey;

@@ -1,15 +1,17 @@
-import React from 'react';
+import React from 'react'
 
 import CollectionItem from '../collection-item/collection-item.component';
 import {
   CollectionPreviewContainer,
-  TitleContainer,
+  TitleLink,
   PreviewContainer,
 } from './collection-preview.styles';
 
 const ColletionPreview = ({ title, items }) => (
   <CollectionPreviewContainer>
-    <TitleContainer>{title.toUpperCase()}</TitleContainer>
+    <TitleLink to={`/shop/${title.toLowerCase()}`}>
+      {title.toUpperCase()}
+    </TitleLink>
     <PreviewContainer>
       {items
         .filter((element, index) => index < 4)

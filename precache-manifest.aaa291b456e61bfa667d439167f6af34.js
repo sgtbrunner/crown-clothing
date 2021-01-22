@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "54518aa4968a806862c8114beab069eb",
+    "revision": "5d8e1f2129c277b8139b71d04d0d92cb",
     "url": "/crown-clothing/index.html"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crown-clothing/static/css/5.c4eba0fd.chunk.css"
   },
   {
-    "revision": "5da136d5627aad389032",
+    "revision": "5f6f1d1e99df878409e8",
     "url": "/crown-clothing/static/css/6.a2ad9c78.chunk.css"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crown-clothing/static/css/7.cecb98f9.chunk.css"
   },
   {
-    "revision": "977cd3de979d799a0f70",
+    "revision": "b98b2c867894db11d4a1",
     "url": "/crown-clothing/static/css/main.5defb38c.chunk.css"
   },
   {
@@ -48,8 +48,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crown-clothing/static/js/5.0a438be2.chunk.js"
   },
   {
-    "revision": "5da136d5627aad389032",
-    "url": "/crown-clothing/static/js/6.4e43aba7.chunk.js"
+    "revision": "5f6f1d1e99df878409e8",
+    "url": "/crown-clothing/static/js/6.a9f299ba.chunk.js"
   },
   {
     "revision": "5b6d945afe2aa2a3805c",
@@ -60,12 +60,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crown-clothing/static/js/8.b413e4f3.chunk.js"
   },
   {
-    "revision": "977cd3de979d799a0f70",
-    "url": "/crown-clothing/static/js/main.55e6dc20.chunk.js"
+    "revision": "b98b2c867894db11d4a1",
+    "url": "/crown-clothing/static/js/main.3432e9f4.chunk.js"
   },
   {
-    "revision": "56a3942120f9ab610e64",
-    "url": "/crown-clothing/static/js/runtime-main.6378aa91.js"
+    "revision": "2a143cedeff7e2f5169f",
+    "url": "/crown-clothing/static/js/runtime-main.9910e558.js"
   },
   {
     "revision": "ed28accb7dd58a0469bff983503ff07e",

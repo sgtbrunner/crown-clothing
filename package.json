@@ -51,7 +51,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "npx eslint --fix --ext .js,.css,.jsx src/",
+    "lint": "npx eslint --fix --ext .js,.jsx src/",
     "format": "prettier --write \"**/*.+(js|jsx|json|css|html)\"",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"

@@ -14,7 +14,7 @@ const Directory = ({ sections }) => (
   </div>
 );
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   sections: selectDirectorySections(state),
 });
 

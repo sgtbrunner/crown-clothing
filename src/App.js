@@ -13,10 +13,11 @@ import Header from './components/header/header.component';
 import Spinner from './components/spinner/spinner.component';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
 
-
 const HomePage = lazy(() => import('./pages/homepage/homepage.page'));
 const ShopPage = lazy(() => import('./pages/shop/shop.page'));
-const SignInAndSignUpPage = lazy(() => import('./pages/sign-in-and-sign-up/sign-in-and-sign-up.page'));
+const SignInAndSignUpPage = lazy(() =>
+  import('./pages/sign-in-and-sign-up/sign-in-and-sign-up.page')
+);
 const CheckoutPage = lazy(() => import('./pages/checkout/checkout.page'));
 
 const App = ({ setCurrentUser, currentUser }) => {

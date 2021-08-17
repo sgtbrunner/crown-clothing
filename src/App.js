@@ -1,7 +1,7 @@
 import React, { useEffect, lazy, Suspense } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import PropTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
 
 import { setCurrentUser } from './redux/user/user.actions';
@@ -13,10 +13,11 @@ import Header from './components/header/header.component';
 import Spinner from './components/spinner/spinner.component';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
 
-
 const HomePage = lazy(() => import('./pages/homepage/homepage.page'));
 const ShopPage = lazy(() => import('./pages/shop/shop.page'));
-const SignInAndSignUpPage = lazy(() => import('./pages/sign-in-and-sign-up/sign-in-and-sign-up.page'));
+const SignInAndSignUpPage = lazy(() =>
+  import('./pages/sign-in-and-sign-up/sign-in-and-sign-up.page')
+);
 const CheckoutPage = lazy(() => import('./pages/checkout/checkout.page'));
 
 const App = ({ setCurrentUser, currentUser }) => {
@@ -71,5 +72,10 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
+
+App.propTypes = {
+  currentUser: PropTypes.object,
+  setCurrentUser: PropTypes.func.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

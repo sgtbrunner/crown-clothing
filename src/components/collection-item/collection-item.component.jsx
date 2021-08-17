@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { addItem } from '../../redux/cart/cart.actions';
 import CustomButton from '../custom-button/custom-button.component';
@@ -29,5 +30,10 @@ const CollectionItem = ({ item, addItem }) => {
 const mapDispatchToProps = (dispatch) => ({
   addItem: (item) => dispatch(addItem(item)),
 });
+
+CollectionItem.propTypes = {
+  item: PropTypes.object.isRequired,
+  addItem: PropTypes.func.isRequired,
+};
 
 export default connect(null, mapDispatchToProps)(CollectionItem);

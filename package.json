@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "firebase": "^7.23.0",
     "node-sass": "^4.14.1",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
@@ -51,7 +52,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "npx eslint --fix --ext .js,.css,.jsx src/",
+    "lint": "npx eslint --fix --ext .js,.jsx src/",
     "format": "prettier --write \"**/*.+(js|jsx|json|css|html)\"",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"

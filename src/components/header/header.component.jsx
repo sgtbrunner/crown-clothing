@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
 
 import { auth } from '../../services/firebase.service';
@@ -40,5 +41,10 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
   hidden: selectCartHidden,
 });
+
+Header.propTypes = {
+  currentUser: PropTypes.object,
+  hidden: PropTypes.bool.isRequired,
+};
 
 export default connect(mapStateToProps)(Header);

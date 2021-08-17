@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import CollectionItem from '../collection-item/collection-item.component';
 import {
@@ -21,5 +22,10 @@ const ColletionPreview = ({ title, items }) => (
     </PreviewContainer>
   </CollectionPreviewContainer>
 );
+
+ColletionPreview.propTypes = {
+  title: PropTypes.string.isRequired,
+  items: PropTypes.array.isRequired,
+};
 
 export default ColletionPreview;

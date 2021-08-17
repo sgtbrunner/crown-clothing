@@ -1,13 +1,18 @@
 import React, { useEffect, lazy, Suspense } from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { fetchCollectionsStartAsync } from '../../redux/shop/shop.actions';
 
 import Spinner from '../../components/spinner/spinner.component';
 
-const CollectionPageContainer = lazy(() => import('../collection/collection.container'));
-const CollectionsOverviewContainer = lazy(() => import('../../components/collections-overview/collections-overview.container'));
+const CollectionPageContainer = lazy(() =>
+  import('../collection/collection.container')
+);
+const CollectionsOverviewContainer = lazy(() =>
+  import('../../components/collections-overview/collections-overview.container')
+);
 
 const ShopPage = ({ fetchCollectionsStartAsync, match }) => {
   useEffect(() => {
@@ -34,5 +39,10 @@ const ShopPage = ({ fetchCollectionsStartAsync, match }) => {
 const mapDispatchToProps = (dispatch) => ({
   fetchCollectionsStartAsync: () => dispatch(fetchCollectionsStartAsync()),
 });
+
+ShopPage.propTypes = {
+  fetchCollectionsStartAsync: PropTypes.func.isRequired,
+  match: PropTypes.object.isRequired,
+};
 
 export default connect(null, mapDispatchToProps)(ShopPage);

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './custom-button.styles.scss';
 
@@ -17,5 +18,11 @@ const CustomButton = ({
     {children}
   </button>
 );
+
+CustomButton.propTypes = {
+  children: PropTypes.string.isRequired,
+  isGoogleSignIn: PropTypes.bool,
+  inverted: PropTypes.bool,
+};
 
 export default CustomButton;

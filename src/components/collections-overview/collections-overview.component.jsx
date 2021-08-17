@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { selectCollectionsForPreview } from '../../redux/shop/shop.selectors';
 
@@ -17,5 +18,9 @@ const CollectionsOverview = ({ collections }) => (
 const mapStateToProps = (state) => ({
   collections: selectCollectionsForPreview(state),
 });
+
+CollectionsOverview.propTypes = {
+  collections: PropTypes.array.isRequired,
+};
 
 export default connect(mapStateToProps)(CollectionsOverview);

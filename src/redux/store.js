@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { createStore, applyMiddleware, compose } from 'redux';
 import { persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';

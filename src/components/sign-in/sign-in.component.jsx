@@ -18,6 +18,7 @@ const SignIn = () => {
       auth.signInWithEmailAndPassword(email, password);
       setCredentials(INITIAL_STATE);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error);
     }
   };

@@ -1,11 +1,12 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
+import PropTypes from 'prop-types';
 
 const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
   const publishableKey = `pk_test_51Hcg4PHtiVplIjx70q5VliPMfaRuH57xr90a1bl1dYnbpDmA10MCU9mZTgn47CV76okeWBS8htbpVdRvg1RzOxXJ004Y6UU5F3`;
 
-  const onToken = (token) => {
+  const onToken = () => {
     alert('Payment Successful!');
   };
 
@@ -24,6 +25,10 @@ const StripeCheckoutButton = ({ price }) => {
       shippingAddress
     />
   );
+};
+
+StripeCheckoutButton.propTypes = {
+  price: PropTypes.number.isRequired,
 };
 
 export default StripeCheckoutButton;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { selectDirectorySections } from '../../redux/directory/directory.selectors';
 
@@ -14,8 +15,12 @@ const Directory = ({ sections }) => (
   </div>
 );
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   sections: selectDirectorySections(state),
 });
+
+Directory.propTypes = {
+  sections: PropTypes.array.isRequired,
+};
 
 export default connect(mapStateToProps)(Directory);

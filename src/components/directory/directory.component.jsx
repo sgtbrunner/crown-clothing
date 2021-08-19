@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 import { selectDirectorySections } from '../../redux/directory/directory.selectors';
 
 import MenuItem from '../../components/menu-item/menu-item.component';
-import './directory.styles.scss';
+import { DirectoryMenuContainer } from './directory.styles';
 
 const Directory = ({ sections }) => (
-  <div className="directory-menu">
-    {sections.map(({ ...sectionProps }) => {
-      return <MenuItem key={sectionProps.id} {...sectionProps} />;
-    })}
-  </div>
+  <DirectoryMenuContainer>
+    {sections.map(({ id, ...otherSectionProps }) => (
+      <MenuItem key={id} {...otherSectionProps} />
+    ))}
+  </DirectoryMenuContainer>
 );
 
 const mapStateToProps = (state) => ({

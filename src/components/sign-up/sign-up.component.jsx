@@ -6,7 +6,8 @@ import {
   auth,
   createUserProfileDocument,
 } from '../../services/firebase.service';
-import './sign-up.styles.scss';
+
+import { SignUpContainer, SignUpTitle } from './sign-up.styles';
 
 const SignUp = () => {
   const INITIAL_STATE = {
@@ -45,45 +46,45 @@ const SignUp = () => {
   };
 
   return (
-    <div className="sign-up">
-      <h2 className="title">I do not have a account</h2>
+    <SignUpContainer>
+      <SignUpTitle>I do not have a account</SignUpTitle>
       <span>Sign up with your email and password</span>
-      <form className="sign-up-form" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <FormInput
-          name="displayName"
-          label="Display Name"
           type="text"
-          onChange={handleChange}
+          name="displayName"
           value={displayName}
+          onChange={handleChange}
+          label="Display Name"
           required
         />
         <FormInput
-          name="email"
-          label="Email"
           type="email"
-          onChange={handleChange}
+          name="email"
           value={email}
+          onChange={handleChange}
+          label="Email"
           required
         />
         <FormInput
+          type="password"
           name="password"
-          label="Password"
-          type="password"
-          onChange={handleChange}
           value={password}
+          onChange={handleChange}
+          label="Password"
           required
         />
         <FormInput
-          name="confirmPassword"
-          label="Confirm Password"
           type="password"
-          onChange={handleChange}
+          name="confirmPassword"
           value={confirmPassword}
+          onChange={handleChange}
+          label="Confirm Password"
           required
         />
         <CustomButton type="submit">SIGN UP</CustomButton>
       </form>
-    </div>
+    </SignUpContainer>
   );
 };
 

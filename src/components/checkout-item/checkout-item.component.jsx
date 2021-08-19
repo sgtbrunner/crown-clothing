@@ -22,21 +22,14 @@ const CheckoutItem = ({ cartItem, clearItemFromCart, addItem, removeItem }) => {
       <ImageContainer>
         <img alt="item" src={imageUrl} />
       </ImageContainer>
-      <TextContainer className="name">{name}</TextContainer>
+      <TextContainer>{name}</TextContainer>
       <QuantityContainer>
-        <div className="arrow" onClick={() => removeItem(cartItem)}>
-          &#10094;
-        </div>
-        <TextContainer className="value">{quantity}</TextContainer>
-        <div className="arrow" onClick={() => addItem(cartItem)}>
-          &#10095;
-        </div>
+        <div onClick={() => removeItem(cartItem)}>&#10094;</div>
+        <TextContainer>{quantity}</TextContainer>
+        <div onClick={() => addItem(cartItem)}>&#10095;</div>
       </QuantityContainer>
-      <TextContainer className="price">{`$${price}`}</TextContainer>
-      <RemoveButtonContainer
-        className="remove-button"
-        onClick={() => clearItemFromCart(cartItem)}
-      >
+      <TextContainer>{`$${price}`}</TextContainer>
+      <RemoveButtonContainer onClick={() => clearItemFromCart(cartItem)}>
         &#10006;
       </RemoveButtonContainer>
     </CheckoutItemContainer>

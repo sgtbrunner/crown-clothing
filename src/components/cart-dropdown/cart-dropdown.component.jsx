@@ -32,7 +32,7 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
         history.push('/checkout');
       }}
     >
-      GO TO CHECKOUT
+      CHECKOUT
     </CustomButton>
   </CartDropdownContainer>
 );

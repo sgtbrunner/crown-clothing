@@ -3,7 +3,8 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-  apiKey: 'AIzaSyD6nwOlZhDgTN0AzNZqdZuM3eMxSp8uUdo',
+  // eslint-disable-next-line no-undef
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: 'crown-clothing-db-9b86e.firebaseapp.com',
   databaseURL: 'https://crown-clothing-db-9b86e.firebaseio.com',
   projectId: 'crown-clothing-db-9b86e',

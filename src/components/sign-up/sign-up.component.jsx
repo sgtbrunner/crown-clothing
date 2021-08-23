@@ -6,34 +6,59 @@ import {
   auth,
   createUserProfileDocument,
 } from '../../services/firebase.service';
+import {
+  DEFAULT_INITIAL_INPUT_FIELD_STATE,
+  DISPLAY_NAME,
+  EMAIL,
+  PASSWORD,
+  CONFIRM_PASSWORD,
+  DISPLAY_NAME_ERROR_MESSAGE,
+  EMAIL_ERROR_MESSAGE,
+  PASSWORD_ERROR_MESSAGE,
+  CONFIRM_PASSWORD_ERROR_MESSAGE,
+} from '../../services/constants.utils';
+import {
+  capitalizeFirstLetter,
+  isEmailValid,
+} from '../../services/functions.utils';
 
 import { SignUpContainer, SignUpTitle } from './sign-up.styles';
 
 const SignUp = () => {
   const INITIAL_STATE = {
-    displayName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    displayName: DEFAULT_INITIAL_INPUT_FIELD_STATE,
+    email: DEFAULT_INITIAL_INPUT_FIELD_STATE,
+    password: DEFAULT_INITIAL_INPUT_FIELD_STATE,
+    confirmPassword: DEFAULT_INITIAL_INPUT_FIELD_STATE,
   };
   const [signUpInput, setSignUpInput] = useState(INITIAL_STATE);
   const { displayName, email, password, confirmPassword } = signUpInput;
+  const isSignUpValid =
+    displayName.isValid &&
+    email.isValid &&
+    password.isValid &&
+    confirmPassword.isValid;
+
+  const isFieldValid = (fieldName, value) => {
+    const validators = {
+      displayName: value.length > 2,
+      email: isEmailValid(value),
+      password: value.length >= 6,
+      confirmPassword: value === password.value,
+    };
+
+    return validators[fieldName];
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (password !== confirmPassword) {
-      alert("passwords don't match");
-      return;
-    }
-
     try {
       const { user } = await auth.createUserWithEmailAndPassword(
-        email,
-        password
+        email.value,
+        password.value
       );
-      await createUserProfileDocument(user, { displayName });
-      setSignUpInput(INITIAL_STATE);
+      await createUserProfileDocument(user, { displayName: displayName.value });
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error);
@@ -42,47 +67,80 @@ const SignUp = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setSignUpInput({ ...signUpInput, [name]: value });
+    const isValid = isFieldValid(name, value);
+    setSignUpInput({
+      ...signUpInput,
+      [name]: {
+        ...signUpInput[name],
+        isValid,
+        showError: signUpInput[name].showError && !isValid,
+        value,
+      },
+    });
+  };
+
+  const handleBlur = (input) => {
+    setSignUpInput({
+      ...signUpInput,
+      [input]: {
+        ...signUpInput[input],
+        showError: !signUpInput[input].isValid,
+      },
+    });
   };
 
   return (
     <SignUpContainer>
       <SignUpTitle>I do not have a account</SignUpTitle>
-      <span>Sign up with your email and password</span>
+      <span>Sign up with your name, email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
+          name={DISPLAY_NAME}
           type="text"
-          name="displayName"
-          value={displayName}
-          onChange={handleChange}
           label="Display Name"
+          value={displayName.value}
+          handleBlur={() => handleBlur(DISPLAY_NAME)}
+          handleChange={handleChange}
+          showError={displayName.showError}
+          errorText={DISPLAY_NAME_ERROR_MESSAGE}
           required
         />
         <FormInput
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleChange}
-          label="Email"
+          name={EMAIL}
+          type={EMAIL}
+          label={capitalizeFirstLetter(EMAIL)}
+          value={email.value}
+          handleBlur={() => handleBlur(EMAIL)}
+          handleChange={handleChange}
+          showError={email.showError}
+          errorText={EMAIL_ERROR_MESSAGE}
           required
         />
         <FormInput
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleChange}
-          label="Password"
+          name={PASSWORD}
+          type={PASSWORD}
+          label={capitalizeFirstLetter(PASSWORD)}
+          value={password.value}
+          handleBlur={() => handleBlur(PASSWORD)}
+          handleChange={handleChange}
+          showError={password.showError}
+          errorText={PASSWORD_ERROR_MESSAGE}
           required
         />
         <FormInput
-          type="password"
-          name="confirmPassword"
-          value={confirmPassword}
-          onChange={handleChange}
+          name={CONFIRM_PASSWORD}
+          type={PASSWORD}
           label="Confirm Password"
+          value={confirmPassword.value}
+          handleBlur={() => handleBlur(CONFIRM_PASSWORD)}
+          handleChange={handleChange}
+          showError={confirmPassword.showError}
+          errorText={CONFIRM_PASSWORD_ERROR_MESSAGE}
           required
         />
-        <CustomButton type="submit">SIGN UP</CustomButton>
+        <CustomButton type="submit" disabled={!isSignUpValid}>
+          SIGN UP
+        </CustomButton>
       </form>
     </SignUpContainer>
   );

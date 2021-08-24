@@ -4,6 +4,7 @@ import { HashRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
+import { DialogProvider } from './components/dialog/dialog.provider';
 import { store, persistor } from './redux/store';
 import * as serviceWorker from './serviceWorkerRegistration';
 
@@ -14,7 +15,9 @@ ReactDOM.render(
   <Provider store={store}>
     <Router basename="/">
       <PersistGate persistor={persistor}>
-        <App />
+        <DialogProvider>
+          <App />
+        </DialogProvider>
       </PersistGate>
     </Router>
   </Provider>,

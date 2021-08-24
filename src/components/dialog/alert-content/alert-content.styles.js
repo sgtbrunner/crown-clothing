@@ -13,6 +13,7 @@ export const AlertContentContainer = styled.div`
 export const AlertContentMessage = styled.span`
   margin: 20px 0;
   font-size: 18px;
+  text-align: center;
 `;
 
 export const AlertContentImage = styled.img`
@@ -29,6 +30,7 @@ export const AlertContentButton = styled.button`
   background-color: ${WHITE};
   color: ${BLACK};
   border: 1px solid ${BLACK};
+  cursor: pointer;
   &:hover {
     background-color: ${BLACK};
     color: ${WHITE};

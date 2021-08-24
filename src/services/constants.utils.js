@@ -18,3 +18,5 @@ export const PASSWORD_ERROR_MESSAGE =
   'Your password must be at least 6 characters long';
 export const CONFIRM_PASSWORD_ERROR_MESSAGE =
   'Password and confirm password do not match';
+export const UNKNOWN_ERROR =
+  'An unknown error occurred. Please try again later!';

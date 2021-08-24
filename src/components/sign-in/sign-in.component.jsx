@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
+import { useDialog } from '../dialog/dialog.provider';
+import AlertContent, {
+  ERROR,
+} from '../dialog/alert-content/alert-content.component';
 import { auth, signInWithGoogle } from '../../services/firebase.service';
 import {
   DEFAULT_INITIAL_INPUT_FIELD_STATE,
@@ -9,6 +13,7 @@ import {
   PASSWORD,
   EMAIL_ERROR_MESSAGE,
   PASSWORD_ERROR_MESSAGE,
+  UNKNOWN_ERROR,
 } from '../../services/constants.utils';
 import {
   capitalizeFirstLetter,
@@ -19,7 +24,10 @@ import {
   SignInContainer,
   SignInTitle,
   ButtonsBarContainer,
+  SignInWithGoogleDialogButton,
 } from './sign-in.styles';
+
+const signInKnownErrors = ['auth/wrong-password', 'auth/user-not-found'];
 
 const SignIn = () => {
   const INITIAL_STATE = {
@@ -29,6 +37,7 @@ const SignIn = () => {
   const [credentials, setCredentials] = useState(INITIAL_STATE);
   const { email, password } = credentials;
   const isSignInValid = email.isValid && password.isValid;
+  const { setDialog, unsetDialog } = useDialog();
 
   const isFieldValid = (fieldName, value) => {
     const validators = {
@@ -43,10 +52,31 @@ const SignIn = () => {
     event.preventDefault();
 
     try {
-      auth.signInWithEmailAndPassword(email.value, password.value);
+      await auth.signInWithEmailAndPassword(email.value, password.value);
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log({ error });
+      const errorMessage = signInKnownErrors.includes(error?.code) ? (
+        <span>
+          Invalid username and/or password. Have you tried{' '}
+          <SignInWithGoogleDialogButton
+            type="button"
+            onClick={() => {
+              unsetDialog();
+              signInWithGoogle();
+            }}
+          >
+            Signing in with Google
+          </SignInWithGoogleDialogButton>
+          ?
+        </span>
+      ) : (
+        UNKNOWN_ERROR
+      );
+
+      setDialog(
+        <AlertContent type={ERROR} onButtonClick={unsetDialog}>
+          {errorMessage}
+        </AlertContent>
+      );
     }
   };
 

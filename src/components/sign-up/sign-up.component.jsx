@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
+import { useDialog } from '../dialog/dialog.provider';
+import AlertContent, {
+  ERROR,
+} from '../dialog/alert-content/alert-content.component';
 import {
   auth,
   createUserProfileDocument,
@@ -16,6 +20,7 @@ import {
   EMAIL_ERROR_MESSAGE,
   PASSWORD_ERROR_MESSAGE,
   CONFIRM_PASSWORD_ERROR_MESSAGE,
+  UNKNOWN_ERROR,
 } from '../../services/constants.utils';
 import {
   capitalizeFirstLetter,
@@ -23,6 +28,8 @@ import {
 } from '../../services/functions.utils';
 
 import { SignUpContainer, SignUpTitle } from './sign-up.styles';
+
+const signUpKnownErrors = ['auth/email-already-in-use'];
 
 const SignUp = () => {
   const INITIAL_STATE = {
@@ -38,6 +45,7 @@ const SignUp = () => {
     email.isValid &&
     password.isValid &&
     confirmPassword.isValid;
+  const { setDialog, unsetDialog } = useDialog();
 
   const isFieldValid = (fieldName, value) => {
     const validators = {
@@ -60,8 +68,15 @@ const SignUp = () => {
       );
       await createUserProfileDocument(user, { displayName: displayName.value });
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error(error);
+      const errorMessage = signUpKnownErrors.includes(error?.code)
+        ? 'This email is already registered. Please try a different one!'
+        : UNKNOWN_ERROR;
+
+      setDialog(
+        <AlertContent type={ERROR} onButtonClick={unsetDialog}>
+          {errorMessage}
+        </AlertContent>
+      );
     }
   };
 
@@ -91,7 +106,7 @@ const SignUp = () => {
 
   return (
     <SignUpContainer>
-      <SignUpTitle>I do not have a account</SignUpTitle>
+      <SignUpTitle>I do not have an account</SignUpTitle>
       <span>Sign up with your name, email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput

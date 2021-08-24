@@ -15,3 +15,13 @@ export const ButtonsBarContainer = styled.div`
   justify-content: space-between;
   margin-top: 60px;
 `;
+
+export const SignInWithGoogleDialogButton = styled.button`
+  border: none;
+  padding: 0;
+  font-size: 18px;
+  font-family: 'Open Sans Condensed';
+  background: none;
+  color: #4285f4;
+  cursor: pointer;
+`;

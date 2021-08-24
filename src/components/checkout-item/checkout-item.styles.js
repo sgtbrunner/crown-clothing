@@ -27,12 +27,11 @@ export const QuantityContainer = styled(TextContainer)`
   display: flex;
 
   span {
-    align-self: center;
-    justify-self: auto;
-    padding-left: 12px;
+    text-align: center;
   }
   div {
     cursor: pointer;
+    user-select: none;
   }
 `;
 

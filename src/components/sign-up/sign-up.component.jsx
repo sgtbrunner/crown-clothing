@@ -6,10 +6,7 @@ import { useDialog } from '../dialog/dialog.provider';
 import AlertContent, {
   ERROR,
 } from '../dialog/alert-content/alert-content.component';
-import {
-  auth,
-  createUserProfileDocument,
-} from '../../services/firebase.service';
+import { auth, createUserProfileDocument } from '../../utils/firebase.utils';
 import {
   DEFAULT_INITIAL_INPUT_FIELD_STATE,
   DISPLAY_NAME,
@@ -21,11 +18,11 @@ import {
   PASSWORD_ERROR_MESSAGE,
   CONFIRM_PASSWORD_ERROR_MESSAGE,
   UNKNOWN_ERROR,
-} from '../../services/constants.utils';
+} from '../../utils/constants.utils';
 import {
   capitalizeFirstLetter,
   isEmailValid,
-} from '../../services/functions.utils';
+} from '../../utils/functions.utils';
 
 import { SignUpContainer, SignUpTitle } from './sign-up.styles';
 

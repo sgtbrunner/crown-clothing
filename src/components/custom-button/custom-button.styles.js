@@ -1,38 +1,35 @@
 import styled, { css } from 'styled-components';
 
-const BLACK = 'black';
-const WHITE = 'white';
-
 const buttonStyles = css`
-  background-color: ${BLACK};
-  color: ${WHITE};
+  background-color: var(--primary-color);
+  color: var(--white-color);
   border: none;
   &:hover {
-    background-color: ${WHITE};
-    color: ${BLACK};
-    border: 1px solid ${BLACK};
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
   }
 `;
 
 const invertedButtonStyles = css`
-  background-color: ${WHITE};
-  color: ${BLACK};
-  border: 1px solid ${BLACK};
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   &:hover {
-    background-color: ${BLACK};
-    color: ${WHITE};
+    background-color: var(--primary-color);
+    color: var(--white-color);
     border: none;
   }
 `;
 
 const googleSignInStyles = css`
-  color: ${WHITE};
-  background-color: #4285f4;
-  border: 1px solid #4285f4;
+  color: var(--white-color);
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
   &:hover {
-    color: #4285f4;
-    background-color: ${WHITE};
-    border: 1px solid #4285f4;
+    color: var(--secondary-color);
+    background-color: var(--white-color);
+    border: 1px solid var(--secondary-color);
   }
 `;
 
@@ -51,15 +48,15 @@ export const CustomButtonContainer = styled.button`
   padding: 0 25px;
   font-size: 13px;
   text-transform: uppercase;
-  font-family: 'Open Sans Condensed';
+  font-family: var(--default-font-family);
   font-weight: bolder;
   cursor: pointer;
   display: flex;
   justify-content: center;
   ${getButtonStyles}
   &:disabled {
-    color: ${WHITE};
-    background-color: gray;
+    color: var(--white-color);
+    background-color: var(--disabled-color);
     cursor: default;
     border: none;
   }

@@ -1,16 +1,17 @@
+// INITIAL STATE
 export const DEFAULT_INITIAL_INPUT_FIELD_STATE = {
   isValid: false,
   value: '',
   showError: false,
 };
 
+// FORM STRINGS
 export const DISPLAY_NAME = 'displayName';
 export const EMAIL = 'email';
 export const PASSWORD = 'password';
 export const CONFIRM_PASSWORD = 'confirmPassword';
 
-export const EMAIL_REGEX_KEY = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
-
+// ERROR MESSAGES
 export const DISPLAY_NAME_ERROR_MESSAGE =
   'Display name must have at least 3 characters';
 export const EMAIL_ERROR_MESSAGE = 'Please enter a valid email address';

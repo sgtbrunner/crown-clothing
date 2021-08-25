@@ -9,7 +9,6 @@ import {
   AddButton,
   BackgroundImage,
   NameContainer,
-  PriceContainer,
 } from './collection-item.styles';
 
 const CollectionItem = ({ item, addItem }) => {
@@ -20,7 +19,7 @@ const CollectionItem = ({ item, addItem }) => {
       <BackgroundImage imageUrl={imageUrl} />
       <CollectionFooterContainer>
         <NameContainer>{name}</NameContainer>
-        <PriceContainer>{`$${price}`}</PriceContainer>
+        <span>{`$${price}`}</span>
       </CollectionFooterContainer>
       <AddButton onClick={() => addItem(item)} inverted>
         Add to cart

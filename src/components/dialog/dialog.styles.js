@@ -12,6 +12,7 @@ export const DialogContainer = styled.div`
   width: 100%;
   height: 100%;
   overflow: auto;
+  z-index: 10;
 `;
 
 export const DialogBackdrop = styled.button`

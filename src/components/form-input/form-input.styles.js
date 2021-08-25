@@ -1,34 +1,30 @@
 import styled, { css } from 'styled-components';
 
-const mainColor = 'black';
-const subColor = 'gray';
-const errorColor = 'red';
-
 const errorContainerStyles = css`
-  border-color: ${errorColor};
+  border-color: var(--error-color);
 `;
 
 const errorLabelStyles = css`
-  color: ${errorColor};
+  color: var(--error-color);
 `;
 
 const shrinkLabelStyles = css`
   top: -6px;
   font-size: 12px;
-  color: ${mainColor};
+  color: var(--primary-color);
 `;
 
 export const FormInputContainer = styled.input`
   background: none;
   background-color: white;
-  color: ${mainColor};
+  color: var(--primary-color);
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
   width: 100%;
   border: none;
   border-radius: 0;
-  border-bottom: 1px solid ${subColor};
+  border-bottom: 1px solid var(--disabled-color);
   margin: 25px 0;
   &:focus {
     outline: none;
@@ -44,7 +40,7 @@ export const FormInputContainer = styled.input`
 FormInputContainer.displayName = 'FormInputContainer';
 
 export const FormInputError = styled.p`
-  color: ${errorColor};
+  color: var(--error-color);
   position: absolute;
   margin-top: -20px;
   margin-left: 5px;
@@ -53,7 +49,7 @@ export const FormInputError = styled.p`
 FormInputError.displayName = 'FormInputError';
 
 export const FormInputLabel = styled.label`
-  color: ${subColor};
+  color: var(--disabled-color);
   font-size: 16px;
   font-weight: normal;
   position: absolute;

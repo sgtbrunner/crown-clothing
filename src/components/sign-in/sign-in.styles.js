@@ -20,8 +20,8 @@ export const SignInWithGoogleDialogButton = styled.button`
   border: none;
   padding: 0;
   font-size: 18px;
-  font-family: 'Open Sans Condensed';
+  font-family: var(--default-font-family);
   background: none;
-  color: #4285f4;
+  color: var(--secondary-color);
   cursor: pointer;
 `;

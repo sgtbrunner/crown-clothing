@@ -12,12 +12,18 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        font-family: var(----default-font-family);
-        padding: 20px 40px;
+        margin: 0;
+        padding: 10px 40px 20px 40px;
+        font-family: 'Open Sans Condensed';
 
         @media screen and (max-width: 767px) {
             padding: 10px;
         }
+    }
+
+    code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+          monospace;
     }
     
     a {

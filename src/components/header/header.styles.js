@@ -6,19 +6,18 @@ export const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
 
   @media screen and (max-width: 767px) {
     height: 60px;
     padding: 10px;
-    margin-bottom: 10px;
   }
 `;
 
 export const LogoContainer = styled(Link)`
   height: 100%;
   width: 70px;
-  padding: 25px;
+  padding: 12px;
+  text-align: center;
 
   @media screen and (max-width: 767px) {
     width: 50px;
@@ -41,4 +40,13 @@ export const OptionsContainer = styled.div`
 export const OptionLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
+`;
+
+export const CustomDivider = styled.hr`
+  margin-top: 0;
+  margin-bottom: 25px;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 10px;
+  }
 `;

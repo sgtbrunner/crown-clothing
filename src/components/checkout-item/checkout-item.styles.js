@@ -28,6 +28,7 @@ export const QuantityContainer = styled(TextContainer)`
 
   span {
     text-align: center;
+    padding-top: 2px;
   }
   div {
     cursor: pointer;

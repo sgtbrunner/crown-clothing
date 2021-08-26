@@ -21,3 +21,6 @@ export const CONFIRM_PASSWORD_ERROR_MESSAGE =
   'Password and confirm password do not match';
 export const UNKNOWN_ERROR =
   'An unknown error occurred. Please try again later!';
+
+// OTHER
+export const EMPTY_CART_MESSAGE = 'Your cart is empty...';

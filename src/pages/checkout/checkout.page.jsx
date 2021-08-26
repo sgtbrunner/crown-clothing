@@ -5,11 +5,11 @@ import { createStructuredSelector } from 'reselect';
 
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
-
 import {
   selectCartItems,
   selectCartTotal,
 } from '../../redux/cart/cart.selectors';
+import { EMPTY_CART_MESSAGE } from '../../utils/constants.utils';
 
 import {
   CheckoutPageContainer,
@@ -17,37 +17,53 @@ import {
   HeaderBlockContainer,
   TotalContainer,
   WarningContainer,
+  EmptyCartContainer,
+  EmptyCartMessage,
+  EmptyCartText,
+  EmptyCartLink,
 } from './checkout.styles';
 
 const CheckoutPage = ({ cartItems, totalPrice }) => (
   <CheckoutPageContainer>
-    <CheckoutHeaderContainer>
-      <HeaderBlockContainer>
-        <span>Product</span>
-      </HeaderBlockContainer>
-      <HeaderBlockContainer>
-        <span>Description</span>
-      </HeaderBlockContainer>
-      <HeaderBlockContainer>
-        <span>Quantity</span>
-      </HeaderBlockContainer>
-      <HeaderBlockContainer>
-        <span>Price</span>
-      </HeaderBlockContainer>
-      <HeaderBlockContainer>
-        <span>Remove</span>
-      </HeaderBlockContainer>
-    </CheckoutHeaderContainer>
-    {cartItems.map((cartItem) => (
-      <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-    ))}
-    <TotalContainer>TOTAL: ${totalPrice}</TotalContainer>
-    <WarningContainer>
-      *Please use the following test credit card for payments*
-      <br />
-      4242 4242 4242 4242 - Exp: 12/29 - CVC: 123
-    </WarningContainer>
-    <StripeCheckoutButton price={totalPrice} />
+    {cartItems.length ? (
+      <>
+        <CheckoutHeaderContainer>
+          <HeaderBlockContainer>
+            <span>Product</span>
+          </HeaderBlockContainer>
+          <HeaderBlockContainer>
+            <span>Description</span>
+          </HeaderBlockContainer>
+          <HeaderBlockContainer>
+            <span>Quantity</span>
+          </HeaderBlockContainer>
+          <HeaderBlockContainer>
+            <span>Price</span>
+          </HeaderBlockContainer>
+          <HeaderBlockContainer>
+            <span>Remove</span>
+          </HeaderBlockContainer>
+        </CheckoutHeaderContainer>
+        {cartItems.map((cartItem) => (
+          <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+        ))}
+        <TotalContainer>TOTAL: ${totalPrice}</TotalContainer>
+        <WarningContainer>
+          *Please use the following test credit card for payments*
+          <br />
+          4242 4242 4242 4242 - Exp: 12/29 - CVC: 123
+        </WarningContainer>
+        <StripeCheckoutButton price={totalPrice} />
+      </>
+    ) : (
+      <EmptyCartContainer>
+        <EmptyCartMessage>{EMPTY_CART_MESSAGE}</EmptyCartMessage>
+        <EmptyCartText>
+          Go back to the <EmptyCartLink to="/">homepage</EmptyCartLink> or shop
+          for <EmptyCartLink to="/shop">other products</EmptyCartLink>
+        </EmptyCartText>
+      </EmptyCartContainer>
+    )}
   </CheckoutPageContainer>
 );
 

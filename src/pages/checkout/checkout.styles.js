@@ -1,12 +1,13 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const CheckoutPageContainer = styled.div`
   width: 55%;
-  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 50px auto 0;
+  padding-bottom: 40px;
   button {
     margin-left: auto;
     margin-top: 50px;
@@ -48,5 +49,28 @@ export const WarningContainer = styled.div`
   text-align: center;
   margin-top: 40px;
   font-size: 24px;
-  color: red;
+  color: var(--error-color);
+`;
+
+export const EmptyCartContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16;
+  margin-top: 150px;
+`;
+
+export const EmptyCartMessage = styled.p`
+  font-size: 36px;
+`;
+
+export const EmptyCartText = styled.p`
+  font-size: 18px;
+`;
+
+export const EmptyCartLink = styled(Link)`
+  &:hover {
+    text-decoration: underline;
+  }
 `;

@@ -30,6 +30,10 @@ const GlobalStyle = createGlobalStyle`
         text-decoration: none;
         color: black;
     }
+
+    p {
+        margin: 0.5em;
+    }
     
     button {
         margin-top: auto;

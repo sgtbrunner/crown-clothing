@@ -52,24 +52,28 @@ export const WarningContainer = styled.div`
   color: var(--error-color);
 `;
 
-export const EmptyCartContainer = styled.div`
+export const CheckoutCartTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 16;
-  margin-top: 150px;
+  margin-top: 100px;
 `;
 
-export const EmptyCartMessage = styled.p`
+export const CheckoutCartTextTitle = styled.p`
   font-size: 36px;
 `;
 
-export const EmptyCartText = styled.p`
+export const CheckoutCartTextWarn = styled.p`
+  font-size: 24px;
+`;
+
+export const CheckoutCartTextMessage = styled.p`
   font-size: 18px;
 `;
 
-export const EmptyCartLink = styled(Link)`
+export const CheckoutCartTextLink = styled(Link)`
   &:hover {
     text-decoration: underline;
   }

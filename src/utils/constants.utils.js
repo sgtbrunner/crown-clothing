@@ -24,3 +24,4 @@ export const UNKNOWN_ERROR =
 
 // OTHER
 export const EMPTY_CART_MESSAGE = 'Your cart is empty...';
+export const BUTTON = 'button';

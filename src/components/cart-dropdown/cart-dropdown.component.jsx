@@ -13,21 +13,21 @@ import { EMPTY_CART_MESSAGE } from '../../utils/constants.utils';
 
 import {
   CartDropdownContainer,
-  CartItemsContainer,
+  CartItemContainer,
   EmptyMessageContainer,
 } from './cart-dropdown.styles';
 
 const CartDropdown = ({ cartItems, history, dispatch }) => (
   <CartDropdownContainer>
-    <CartItemsContainer>
+    <CartItemContainer>
       {cartItems.length ? (
         cartItems.map((cartItem) => (
-          <CartItem key={cartItem.id} item={cartItem} />
+          <CartItem key={cartItem.id} item={cartItem} data-testid="cart-item" />
         ))
       ) : (
         <EmptyMessageContainer>{EMPTY_CART_MESSAGE}</EmptyMessageContainer>
       )}
-    </CartItemsContainer>
+    </CartItemContainer>
     <CustomButton
       onClick={() => {
         dispatch(toggleCartHidden());

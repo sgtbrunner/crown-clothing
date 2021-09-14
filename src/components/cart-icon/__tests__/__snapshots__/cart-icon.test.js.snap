@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartIcon component should render component snapshot 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM gwlqxO"
+    role="figure"
+  >
+    <svg
+      class="sc-dlnjwi bSAYMN"
+    >
+      shopping-bag.svg
+    </svg>
+    <span
+      class="sc-gtsrHT kIzdTM"
+    >
+      5
+    </span>
+  </div>
+</div>
+`;

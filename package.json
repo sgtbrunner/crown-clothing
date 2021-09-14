@@ -17,6 +17,7 @@
     "react-scripts": "3.4.3",
     "react-stripe-checkout": "^2.6.3",
     "redux": "^4.0.5",
+    "redux-mock-store": "^1.5.4",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
@@ -50,7 +51,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --detectOpenHandles",
+    "test-coverage": "npm run test -- --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "npx eslint --fix --ext .js,.jsx src/",
     "format": "prettier --write \"**/*.+(js|jsx|json|css|html)\"",
@@ -74,5 +76,12 @@
   },
   "prettier": {
     "singleQuote": true
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!**/App.js",
+      "src/**/*.component.jsx",
+      "src/utils/functions.utils.js"
+    ]
   }
 }

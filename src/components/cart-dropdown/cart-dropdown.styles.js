@@ -14,7 +14,7 @@ export const CartDropdownContainer = styled.div`
   z-index: 5;
 `;
 
-export const CartItemsContainer = styled.div`
+export const CartItemContainer = styled.div`
   height: 240px;
   display: flex;
   flex-direction: column;

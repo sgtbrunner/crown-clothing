@@ -13,4 +13,9 @@ CustomButton.propTypes = {
   inverted: PropTypes.bool,
 };
 
+CustomButton.defaultProps = {
+  isGoogleSignIn: false,
+  inverted: false,
+};
+
 export default CustomButton;

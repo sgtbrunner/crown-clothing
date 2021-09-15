@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CollectionItem component should match snapshot 1`] = `
+<div>
+  <div
+    class="sc-gtsrHT Mxfvc"
+  >
+    <div
+      class="sc-hKFxyN etKAyI"
+      role="img"
+    />
+    <div
+      class="sc-eCApnc flhIsE"
+    >
+      <span
+        class="sc-jSFjdj duvpOf"
+      >
+        Item
+      </span>
+      <span>
+        $10
+      </span>
+    </div>
+    <button
+      class="sc-bdnxRM pMdtA sc-dlnjwi kdkiUs"
+    >
+      Add to cart
+    </button>
+  </div>
+</div>
+`;

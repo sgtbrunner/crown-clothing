@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckoutItem component should match snapshot 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM dAKMoO"
+  >
+    <div
+      class="sc-gtsrHT hFUtMm"
+    >
+      <img
+        alt="checkout-item"
+        src="https://www.myimage.com/item"
+      />
+    </div>
+    <span
+      class="sc-dlnjwi dQblgh"
+    >
+      Item
+    </span>
+    <span
+      class="sc-dlnjwi sc-hKFxyN dQblgh cywhXn"
+    >
+      <div
+        role="button"
+      >
+        ❮
+      </div>
+      <span
+        class="sc-dlnjwi dQblgh"
+      >
+        2
+      </span>
+      <div
+        role="button"
+      >
+        ❯
+      </div>
+    </span>
+    <span
+      class="sc-dlnjwi dQblgh"
+    >
+      $10
+    </span>
+    <div
+      class="sc-eCApnc btQqcL"
+      role="button"
+    >
+      ✖
+    </div>
+  </div>
+</div>
+`;

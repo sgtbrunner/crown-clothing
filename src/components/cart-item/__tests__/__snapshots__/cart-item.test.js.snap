@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartItem component should match component snapshot 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM kZjATh"
+  >
+    <img
+      alt="item"
+      class="sc-gtsrHT dSkxJL"
+      src="https://www.myimage.com/item"
+    />
+    <div
+      class="sc-dlnjwi kRPREb"
+    >
+      <span>
+        Item
+      </span>
+      <span>
+        2
+         x $
+        10
+      </span>
+    </div>
+  </div>
+</div>
+`;

@@ -9,7 +9,7 @@ import {
 } from './collection-preview.styles';
 
 const ColletionPreview = ({ title, items }) => (
-  <CollectionPreviewContainer>
+  <CollectionPreviewContainer data-testid="collection-preview">
     <TitleLink to={`/shop/${title.toLowerCase()}`}>
       {title.toUpperCase()}
     </TitleLink>

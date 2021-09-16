@@ -32,6 +32,13 @@ describe('CollectionItem component', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('should render collection item', () => {
+    mountComponent();
+
+    const collectionItem = screen.getByTestId('collection-item');
+    expect(collectionItem).toBeInTheDocument();
+  });
+
   it('should render collection item image', () => {
     mountComponent();
 

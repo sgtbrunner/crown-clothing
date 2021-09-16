@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CollectionPreview component should match component snapshot 1`] = `
+<div>
+  <div
+    class="sc-gKAaRy ebxjGi"
+    data-testid="collection-preview"
+  >
+    <a
+      class="sc-iCoGMd bgiQSS"
+      href="#/shop/jackets"
+    >
+      JACKETS
+    </a>
+    <div
+      class="sc-fujyAs hAIBqS"
+    >
+      <div
+        class="sc-gtsrHT Mxfvc"
+        data-testid="collection-item"
+      >
+        <div
+          class="sc-hKFxyN hPnyGZ"
+          role="img"
+        />
+        <div
+          class="sc-eCApnc flhIsE"
+        >
+          <span
+            class="sc-jSFjdj duvpOf"
+          >
+            Jacket 1
+          </span>
+          <span>
+            $10
+          </span>
+        </div>
+        <button
+          class="sc-bdnxRM pMdtA sc-dlnjwi kdkiUs"
+        >
+          Add to cart
+        </button>
+      </div>
+      <div
+        class="sc-gtsrHT Mxfvc"
+        data-testid="collection-item"
+      >
+        <div
+          class="sc-hKFxyN fNHpCW"
+          role="img"
+        />
+        <div
+          class="sc-eCApnc flhIsE"
+        >
+          <span
+            class="sc-jSFjdj duvpOf"
+          >
+            Jacket 2
+          </span>
+          <span>
+            $20
+          </span>
+        </div>
+        <button
+          class="sc-bdnxRM pMdtA sc-dlnjwi kdkiUs"
+        >
+          Add to cart
+        </button>
+      </div>
+      <div
+        class="sc-gtsrHT Mxfvc"
+        data-testid="collection-item"
+      >
+        <div
+          class="sc-hKFxyN gBJzgP"
+          role="img"
+        />
+        <div
+          class="sc-eCApnc flhIsE"
+        >
+          <span
+            class="sc-jSFjdj duvpOf"
+          >
+            Jacket 3
+          </span>
+          <span>
+            $30
+          </span>
+        </div>
+        <button
+          class="sc-bdnxRM pMdtA sc-dlnjwi kdkiUs"
+        >
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

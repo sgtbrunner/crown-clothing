@@ -4,6 +4,7 @@ exports[`CollectionItem component should match snapshot 1`] = `
 <div>
   <div
     class="sc-gtsrHT Mxfvc"
+    data-testid="collection-item"
   >
     <div
       class="sc-hKFxyN etKAyI"

@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Directory component should match snapshot 1`] = `
+<div>
+  <div
+    class="sc-jSFjdj eiSdVN"
+  >
+    <div
+      class="sc-bdnxRM NchVL"
+      data-testid="menu-item"
+    >
+      <div
+        class="sc-gtsrHT gSOdEr background-image"
+      />
+      <div
+        class="sc-dlnjwi jgWYvt"
+      >
+        <span
+          class="sc-hKFxyN heyTLl"
+        >
+          HATS
+        </span>
+        <span
+          class="sc-eCApnc llITcv"
+        >
+          SHOP NOW
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-bdnxRM NchVL"
+      data-testid="menu-item"
+    >
+      <div
+        class="sc-gtsrHT gHihWz background-image"
+      />
+      <div
+        class="sc-dlnjwi jgWYvt"
+      >
+        <span
+          class="sc-hKFxyN heyTLl"
+        >
+          JACKETS
+        </span>
+        <span
+          class="sc-eCApnc llITcv"
+        >
+          SHOP NOW
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-bdnxRM NchVL"
+      data-testid="menu-item"
+    >
+      <div
+        class="sc-gtsrHT gEMxoM background-image"
+      />
+      <div
+        class="sc-dlnjwi jgWYvt"
+      >
+        <span
+          class="sc-hKFxyN heyTLl"
+        >
+          SHOES
+        </span>
+        <span
+          class="sc-eCApnc llITcv"
+        >
+          SHOP NOW
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-bdnxRM dDDrsu"
+      data-testid="menu-item"
+    >
+      <div
+        class="sc-gtsrHT khwRlI background-image"
+      />
+      <div
+        class="sc-dlnjwi jgWYvt"
+      >
+        <span
+          class="sc-hKFxyN heyTLl"
+        >
+          WOMENS
+        </span>
+        <span
+          class="sc-eCApnc llITcv"
+        >
+          SHOP NOW
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-bdnxRM dDDrsu"
+      data-testid="menu-item"
+    >
+      <div
+        class="sc-gtsrHT gvFqFL background-image"
+      />
+      <div
+        class="sc-dlnjwi jgWYvt"
+      >
+        <span
+          class="sc-hKFxyN heyTLl"
+        >
+          MENS
+        </span>
+        <span
+          class="sc-eCApnc llITcv"
+        >
+          SHOP NOW
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -4,9 +4,9 @@ import { HashRouter as Router } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import configureMockStore from 'redux-mock-store';
 
-const mockStore = configureMockStore();
-
 import Directory from '../directory.component';
+
+const mockStore = configureMockStore();
 
 const sections = [
   {

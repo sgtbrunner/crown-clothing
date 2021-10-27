@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should match snapshot 1`] = `
+<div>
+  <div
+    class="sc-jrsJWt fkGbKm"
+  >
+    <a
+      class="sc-kEqXSa dFuMdu"
+      href="#/"
+    >
+      <svg>
+        crown.svg
+      </svg>
+    </a>
+    <div
+      class="sc-iqAclL bUvwJg"
+    >
+      <a
+        class="sc-crzoAE gNXDDD"
+        href="#/shop"
+      >
+        SHOP
+      </a>
+      <a
+        class="sc-crzoAE gNXDDD"
+        href="#/signin"
+      >
+        SIGN IN
+      </a>
+      <div
+        class="sc-bdnxRM gwlqxO"
+        role="figure"
+      >
+        <svg
+          class="sc-dlnjwi bSAYMN"
+        >
+          shopping-bag.svg
+        </svg>
+        <span
+          class="sc-gtsrHT kIzdTM"
+        >
+          0
+        </span>
+      </div>
+    </div>
+  </div>
+  <hr
+    class="sc-dIsUp dUaFiV"
+  />
+</div>
+`;
